@@ -1,4 +1,6 @@
 #!/bin/bash
+
+cd cluster
 #эскпорт переменных в Terraform для работы с Yandex Cloud
 export YC_TOKEN=$(yc iam create-token)
 export YC_CLOUD_ID=$(yc config get cloud-id)
@@ -12,6 +14,7 @@ echo 'yes' | terraform apply
 #Пауза для ожидания завершения создания
 sleep 60
 
+cd ../deployment
 #Получение id кластера и добавление учетных данных кластера
 cluster_id=$(terraform output | cut -d '"' -f 2)
 yc managed-kubernetes cluster get-credentials --id $cluster_id --external 
