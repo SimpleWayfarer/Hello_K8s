@@ -14,9 +14,9 @@ echo 'yes' | terraform apply
 #Пауза для ожидания завершения создания
 sleep 60
 
-cd ../deployment
 #Получение id кластера и добавление учетных данных кластера
 cluster_id=$(terraform output | cut -d '"' -f 2)
+cd ../deployment
 yc managed-kubernetes cluster get-credentials --id $cluster_id --external 
 
 #Создание namespace
