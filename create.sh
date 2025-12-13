@@ -16,8 +16,8 @@ sleep 60
 
 #Получение id кластера и добавление учетных данных кластера
 cluster_id=$(terraform output | cut -d '"' -f 2)
-cd ../deployment
-yc managed-kubernetes cluster get-credentials --id $cluster_id --external 
+cd ../application
+yc managed-kubernetes cluster get-credentials --id $cluster_id --external --force
 
 #Создание namespace
 kubectl create ns application
