@@ -36,7 +36,8 @@ resource "yandex_kubernetes_cluster" "k8s-cluster" {
   depends_on = [
     yandex_resourcemanager_folder_iam_member.k8s-clusters-agent,
     yandex_resourcemanager_folder_iam_member.vpc-public-admin,
-    yandex_resourcemanager_folder_iam_member.images-puller
+    yandex_resourcemanager_folder_iam_member.images-puller,
+    yandex_resourcemanager_folder_iam_member.load-balancer-admin
   ]
 
 }
@@ -74,6 +75,12 @@ resource "yandex_resourcemanager_folder_iam_member" "images-puller" {
   folder_id = var.folder_id
   role      = "container-registry.images.puller"
   member    = "serviceAccount:${yandex_iam_service_account.ha-k8s-account.id}"
+}
+resource "yandex_resourcemanager_folder_iam_member" "load-balancer-admin" {
+  # Сервисному аккаунту назначается роль "load-balancer.admin".
+  folder_id = var.folder_id
+  role      = "load-balancer.admin"
+  member    = "serviceAccount:${yandex_iam_service_account.k8s-cluster-account.id}"
 }
 
 #Создание группы узлов
