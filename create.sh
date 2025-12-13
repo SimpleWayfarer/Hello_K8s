@@ -27,7 +27,7 @@ kubectl config set-context --current --namespace=application
 kubectl apply -f deployment.yaml
 kubectl apply -f load-balancer.yaml
 
-#Пауза для ожидания деплоя
+#Пауза для ожидания запуска Ingress
 sleep 120
 
 #Вывод информации о приложениии
