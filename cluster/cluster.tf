@@ -80,7 +80,7 @@ resource "yandex_resourcemanager_folder_iam_member" "load-balancer-admin" {
   # Сервисному аккаунту назначается роль "load-balancer.admin".
   folder_id = var.folder_id
   role      = "load-balancer.admin"
-  member    = "serviceAccount:${yandex_iam_service_account.k8s-cluster-account.id}"
+  member    = "serviceAccount:${yandex_iam_service_account.ha-k8s-account.id}"
 }
 
 #Создание группы узлов
