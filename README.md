@@ -15,10 +15,10 @@ chmod +x create.sh
 ```
 ./create.sh
 ```
-4) В файл output.txt запишется информация о приложение, IP-адрес для доступа находится в строке LoadBalancer Ingress
+4) В файл output.txt запишется информация о приложение, IP-адрес для доступа находится в строке LoadBalancer Ingress <IP-адрес>
 
 # Удаление кластера
-1) Сделать файл destroy.sh исполняемым командой 
+1) Сделать файл destroy.sh исполняемым 
 ```
 chmod +x ./destroy.sh
 ```
