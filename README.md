@@ -1,9 +1,9 @@
 Данный пример создает с помощью Terraform кластер Kubernetes в Yandex Cloud и запускает на нем приложение hello вместе с сервисом балансировщиком нагрузки
 
 # Установка компонентов 
-1) [Установка и инициализация интерфейса командной строки Yandex Cloud] (https://yandex.cloud/ru/docs/cli/quickstart)
-2) [Установка Terraform] (https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
-3) [Установка kubectl] (https://kubernetes.io/ru/docs/tasks/tools/install-kubectl/)
+1) [Установка и инициализация интерфейса командной строки Yandex Cloud](https://yandex.cloud/ru/docs/cli/quickstart)
+2) [Установка Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
+3) [Установка kubectl](https://kubernetes.io/ru/docs/tasks/tools/install-kubectl/)
 
 # Создание кластера
 1) Создать файл terraform.tfvars со значениями переменных folder_id (идентификатор папки в облаке) и k8s_version (версия k8s, версия 1.30 по умолчанию скоро окончательно устареет)
